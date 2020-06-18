@@ -1,0 +1,31 @@
+@import "config";
+@import "../components/navbar/navbar";
+@import "../components/hero/hero";
+@import "../components/home/home";
+@import "../components/portfolio/portfolio";
+@import "../components/cv/cv";
+@import "../components/contact/contact";
+@import "../components/footer/footer";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+    
+}
+
+
+.app-wrap{
+   
+    min-height: 100vh;
+    width: calc(100% - 65px);
+    float: right;
+    color: $mainColor;
+    display: flex;
+    justify-content: center;
+    background: url('../images/pattern.svg');
+    background-position: right;
+    background-size: cover;
+    background-color: $borderColor;
+}

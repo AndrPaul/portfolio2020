@@ -1,0 +1,49 @@
+.nav-wrap {
+  height: 100vh;
+  width: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $mainColor;
+  position: absolute;
+
+  nav {
+    height: 100vh;
+    width: 63px;
+    background-color: $mainColor;
+    border-left: 1px solid $borderColor;
+    border-right: 1px solid $borderColor;
+    display: flex;
+    justify-content: center;
+    
+    ul{
+      list-style-type: none;
+      height: 40vh;
+      display: flex;
+      flex-direction: column;
+      margin-top: 10vh;
+      &:first-child{
+        border-top: 1px solid $borderColor;
+
+      }
+      
+
+      li {
+        color: $borderColor;
+        font-size: 30px;
+        border-bottom: 1px solid $borderColor;
+        padding: 16px;
+        text-align: center;
+        &:hover{
+          background-color: $borderColor;
+          color: $liBlue;
+          transition: ease-in 0.3s;
+        }
+      }
+    }
+
+    
+
+  }
+  
+}
