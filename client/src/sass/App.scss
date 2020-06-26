@@ -1,0 +1,70 @@
+@import "config";
+@import "../components/navbar/navbar";
+@import "../components/hero/hero";
+@import "../components/home/home";
+@import "../components/portfolio/portfolio";
+@import "../components/cv/cv";
+@import "../components/contact/contact";
+@import "../components/footer/footer";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app-wrap {
+  position: relative;
+  min-height: 100vh;
+  width: calc(100% - 65px);
+  background-color: $mainColor;
+  float: right;
+  color: $borderColor;
+  display: flex;
+  justify-content: center;
+  padding-top: 10vh;
+  padding-left: 5%;
+  padding-right: 5%;
+  font-weight: 400;
+  font-family: "Roboto Slab", serif;
+}
+
+.btn {
+  padding: 8px 12px;
+  border: none;
+  text-decoration: none;
+  background-color: $borderColor;
+  font-family: "Akrobat";
+  font-size: 18px;
+  color: $mainColor;
+  text-transform: uppercase;
+  font-weight: lighter;
+  border-radius: 2px;
+
+  &:hover {
+    color: $liOrange;
+    transition: ease-in 0.3s;
+    background-color: $hoverColor;
+  }
+}
+
+.btn2 {
+  color: $borderColor;
+  padding: 8px 10px;
+  text-decoration: none;
+  background-color: $borderColor;
+  font-family: "Akrobat";
+  text-transform: uppercase;
+  color: $mainColor;
+  font-size: 15px;
+  border-radius: 2px;
+  
+  display: flex;
+  justify-content: space-between;
+
+  &:hover {
+    color: $liOrange;
+    transition: ease-in 0.3s;
+    
+  }
+}

@@ -1,0 +1,37 @@
+.portItems {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    min-height: 350px;
+ 
+
+    .itemDesc {
+        
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        
+        
+
+        a:first-of-type {
+            margin-top: 15px;
+            border-bottom: 1px solid $mainColor;
+            background-color: $hoverColor;
+        }
+        
+    }
+    .pItem {
+        border: 1px solid $borderColor;     
+        margin: 15px;
+        border-radius: 2px;
+        max-width: 300px;
+
+        h3 {
+            border-bottom: 1px solid $borderColor;
+            padding-bottom: 15px;
+            font-family: 'Akrobat';
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+    }
+}

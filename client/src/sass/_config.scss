@@ -1,0 +1,32 @@
+// Colors
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
+@font-face {
+    font-family: 'Akrobat';
+    font-style: normal;
+    font-weight: 400;
+    src:url('../fonts/Akrobat/WEB/Akrobat-Black.eot');
+    src:local("Akrobat"),
+        url('../fonts/Akrobat/WEB/Akrobat-Black.woff') format('woff'),
+        url('../fonts/Akrobat/WEB/Akrobat-Black.woff2') format('woff2'),
+    
+    
+  }
+
+
+
+$mainColor:  #eeeeee;
+$borderColor: #222831;
+$liOrange : #e79c2a;
+$hoverColor: #393e46;
+
+.orange {
+    color: $liOrange;
+    z-index: 2;
+    
+}
+
+
+/* Color Theme Swatches in RGBA */

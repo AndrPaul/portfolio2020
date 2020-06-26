@@ -1,0 +1,67 @@
+.homepage {
+  .topContainer {
+    position: relative;
+    & > h1:first-of-type {
+      font-size: 90px;
+      position: absolute;
+      top: 0vh;
+    }
+    & > h1:nth-child(2) {
+      font-size: 55px;
+      padding-top: 7vh;
+    }
+
+    h1 {
+      line-height: 0.8;
+    }
+  }
+
+  .btnContainer {
+    margin-top: 5vh;
+    display: flex;
+
+    & > .btn:first-of-type {
+      margin-right: 10px;
+    }
+  }
+
+  .homeBtm {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  h2 {
+    font-size: 46px;
+
+    padding-top: 5vh;
+  }
+  .name {
+    color: $liOrange;
+  }
+
+  .equal {
+    color: rgb(255, 136, 0);
+  }
+
+  .curlybrace {
+    color: rgb(168, 37, 207);
+  }
+
+  .icons {
+    margin-top: 20vh;
+    ul {
+      display: flex;
+      width: 100%;
+
+      list-style-type: none;
+
+      li {
+        padding-right: 10px;
+        img {
+          height: 35px;
+        }
+      }
+    }
+  }
+}
