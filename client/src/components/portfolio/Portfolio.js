@@ -1,51 +1,35 @@
-import React from 'react'
+import React , { useState , useEffect } from 'react'
 import Hero from '../hero/Hero';
-import PortItem from './portItem/PortItem'
+import axios from 'axios';
+import PortItem from './portItem/PortItem';
+
 
 function Portfolio(props) {
 
-    let items = [
-
+    const items = [
         {
-            src: 'https://dummyimage.com/298x150/d4c768/ffffff', 
-            alt: "dummyimage",
-            title: 'title',
-            description: 'Starwars themed minigame, fun project made to exercise and better my javascript knowledge.',
-            gitlink: 'https://github.com/injecti0n'
+            src: '', 
+            alt: '',
+            title: '',
+            description: '',
+            gitlink: '',
+            seelink: ''
         },
-        {
-            src: 'https://dummyimage.com/298x150/d4c768/ffffff', 
-            alt: "dummyimage",
-            title: 'title',
-            description: 'Starwars themed minigame, fun project made to exercise and better my javascript knowledge.',
-            gitlink: 'https://github.com/injecti0n'
-        },
-        {
-            src: 'https://dummyimage.com/298x150/d4c768/ffffff', 
-            alt: "dummyimage",
-            title: 'title',
-            description: 'Starwars themed minigame, fun project made to exercise and better my javascript knowledge.',
-            gitlink: 'https://github.com/injecti0n'
-        },
-        {
-            src: 'https://dummyimage.com/298x150/d4c768/ffffff', 
-            alt: "dummyimage",
-            title: 'title',
-            description: 'Starwars themed minigame, fun project made to exercise and better my javascript knowledge.',
-            gitlink: 'https://github.com/injecti0n'
-        },
-        {
-            src: 'https://dummyimage.com/298x150/d4c768/ffffff', 
-            alt: "dummyimage",
-            title: 'title',
-            description: 'Starwars themed minigame, fun project made to exercise and better my javascript knowledge.',
-            gitlink: 'https://github.com/injecti0n'
-        },
-
-
-
     ]
-
+    useEffect(() => {
+        getBlogPost();   
+    });
+    getBlogPost = () => {
+        axios.get('/api')
+          .then((response) => {
+            const data = response.data;
+            this.setState({ posts: data });
+            console.log('Data has been received!!');
+          })
+          .catch(() => {
+            alert('Error retrieving data!!!');
+          });
+      }
     return (
         <div>
             <Hero title={props.title} subTitle={props.subTitle} text={props.text} />
