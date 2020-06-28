@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
 
     PortfolioItem.find({  })
         .then((data) => {
-            console.log('Data: ', data);
+            console.log('Data: recived');
             res.json(data);
         })
         .catch((error) => {

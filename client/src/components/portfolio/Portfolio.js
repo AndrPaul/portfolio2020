@@ -4,36 +4,31 @@ import axios from 'axios';
 import PortItem from './portItem/PortItem';
 
 
-function Portfolio(props) {
+const Portfolio = (props) => {
+    const [state,setState] = useState({
+      projects:[]
+    })
 
-    const items = [
-        {
-            src: '', 
-            alt: '',
-            title: '',
-            description: '',
-            gitlink: '',
-            seelink: ''
-        },
-    ]
+    
+ 
     useEffect(() => {
-        getBlogPost();   
-    });
-    getBlogPost = () => {
-        axios.get('/api')
-          .then((response) => {
-            const data = response.data;
-            this.setState({ posts: data });
-            console.log('Data has been received!!');
-          })
-          .catch(() => {
-            alert('Error retrieving data!!!');
-          });
-      }
+      axios.get('http://localhost:8080/api')
+      .then(res=>res)
+      .then(data=>{
+       // console.log(data.data)
+     
+       setState(prevState=>{
+         return{...prevState,projects:data.data}
+       })
+       
+      })
+    },[]);
+  
     return (
         <div>
             <Hero title={props.title} subTitle={props.subTitle} text={props.text} />
-            <PortItem item={items} />
+            <PortItem item={state.projects} />
+            
         </div>
     );
 
