@@ -5,9 +5,7 @@ const obj = ({ item }) => {
     return (
         <div className='portItems'>
 
-        {item.map(project=>(
-            console.log(project)
-        ))}
+       
             {
                 item.map((obj, i) => (
                     <div  className='pItem' key={i}>

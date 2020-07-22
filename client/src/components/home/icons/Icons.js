@@ -1,20 +1,19 @@
 import React from "react";
 
-function Icons({ images }) {
+const Icons = ({ images }) => {
   return (
     <div className='icons'>
       <ul>
-          {
-          
-          images.map((img,i)=>(
-               
+        {
+
+          images.map((img, i) => (
             <li key={i}>
-            <img src={img.src} alt={img.alt} />
+              <img src={img.src} alt={img.alt} />
             </li>
-         ))
-          
-          }
-          </ul>
+          ))
+
+        }
+      </ul>
     </div>
   );
 }

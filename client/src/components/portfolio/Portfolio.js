@@ -8,11 +8,10 @@ const Portfolio = (props) => {
     const [state,setState] = useState({
       projects:[]
     })
-
-    
+   
  
     useEffect(() => {
-      axios.get('http://localhost:8080/api')
+      axios.get('http://localhost:8080/api/portItems')
       .then(res=>res)
       .then(data=>{
        // console.log(data.data)

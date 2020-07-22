@@ -26,15 +26,15 @@
   padding-left: 5%;
   padding-right: 5%;
   font-weight: 400;
-  font-family: "Roboto Slab", serif;
+  font-family: $secondFont;
 }
 
 .btn {
-  padding: 8px 12px;
+  padding: 12px 17px;
   border: none;
   text-decoration: none;
   background-color: $borderColor;
-  font-family: "Akrobat";
+  font-family: $primeFont;
   font-size: 18px;
   color: $mainColor;
   text-transform: uppercase;

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NavBar from "./components/navbar/NavBar";
 import Home from "./components/home/Home";
@@ -6,53 +6,42 @@ import Portfolio from "./components/portfolio/Portfolio";
 import CV from "./components/cv/CV";
 import Contact from "./components/contact/Contact";
 import Footer from "./components/footer/Footer";
+import axios from 'axios';
 
 import "./sass/App.scss";
 
-export default class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      headerLinks: [
-        { title: "Home", path: "/" },
-        { title: "Portfolio", path: "/portfolio" },
-        { title: "CV", path: "/cv" },
-        { title: "Contact", path: "/contact" },
-      ],
-      home: {
-        title: "Hello, my name is Paul",
-        subTitle: "I'm a web developer",
-      },
-      porfolio: {
-        title: "Portfolio",
-        subTitle: "Checkout my work.",
-      },
-      cv: {
-        title: "Download my CV",
-      },
-      contact: {
-        title: "Let's Talk",
-      },
-    };
-  }
-  render() {
-    return (
-      <Router>
-        <div className="App">
-          <NavBar />
+const App = (props) => {
+  const [header, setHeader] = useState({});
 
-          <div className="app-wrap">
-            <Switch>
-              <Route path="/" exact render={() => (<Home title={this.state.home.title} subTitle={this.state.home.subTitle} />)} />
-              <Route path="/portfolio" render={() => (<Portfolio title={this.state.porfolio.title} subTitle={this.state.porfolio.subTitle} />)} />
-              <Route path="/cv" render={() => (<CV title={this.state.cv.title} subTitle={this.state.cv.subTitle} />)} />
-              <Route path="/contact" render={() => (<Contact title={this.state.contact.title} subTitle={this.state.contact.subTitle} />)} />
-              <Route path="/footer" component={Footer} />
-            </Switch>
+  useEffect(() => {
+    axios.get('http://localhost:8080/api/metainfo')
+      .then(res => {
+        console.log(res.data)
 
-          </div>
+        setHeader(res.data)
+        // return[...res.data]
+      })
+  }, []);
+
+
+  return (
+    <Router>
+      <div className="App">
+        <NavBar />
+
+        <div className="app-wrap">
+          <Switch>
+            <Route path="/" exact render={Home} />
+            <Route path="/portfolio" render={() => (<Portfolio title={header.length > 0 ? header[0].portfolio.title : ''} subTitle={header.length > 0 ? header[0].portfolio.subTitle : ''} />)} />
+            <Route path="/cv" render={() => (<CV title={header.length > 0 ? header[0].cv.title : ''} subTitle={header.length > 0 ? header[0].cv.subTitle : ''} />)} />
+            <Route path="/contact" render={() => (<Contact title={header.length > 0 ? header[0].contact.title : ''} subTitle={header.length > 0 ? header[0].contact.subTitle : ''} />)} />
+            <Route path="/footer" component={Footer} />
+          </Switch>
+
         </div>
-      </Router>
-    );
-  }
+      </div>
+    </Router>
+  );
 }
+
+export default App
