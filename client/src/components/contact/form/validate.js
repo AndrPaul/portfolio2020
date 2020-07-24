@@ -1,21 +1,18 @@
-export default function validate(values) {
-    let errors = {};
-    
-    if (!values.email) {
-        
-        errors.email = "Email is required";
-    } else if (!/\S+@\S+\.\S+/.test(values.email)) {
-        errors.email = "Email address is invalid, ex: your@email.com";
+import React from "react";
+
+export default function ErrroMessage({ error }) {
+  if (error) {
+    switch (error.type) {
+      case "required":
+        return <p className="error">Please do not leave the feild empty</p>;
+      case "minLength":
+        return <p className="error">The message needs to be minmium 15 charcaters</p>;
+      case "pattern":
+        return <p className="error">Please enter a valid email address</p>;
+      default:
+        return null;
     }
-    if (!values.name) {
-        
-        errors.name = "Please type in your name.";
-    }
-    if (!values.subject) {
-        errors.subject = "Please don't leave the subject field empty.";
-    }
-    if (values.description.length < 20) {
-        errors.description = "Your message needs to be more than 20 characters.";
-    }
-    return errors;
+  }
+
+  return null;
 }

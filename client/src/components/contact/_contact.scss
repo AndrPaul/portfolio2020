@@ -1,59 +1,62 @@
-.formContainer {
-   display: inline-flex;
-   
-    max-width: 1000px;
-   
-    
-}
+@import "toastr";
 
+.formContainer {
+  display: inline-flex;
+
+  max-width: 1000px;
+}
+.toast-top-right{
+    top: 20px;
+}
 .inputError {
-    border-color: red;
+  border-color: red;
 }
 .error {
-    padding-left: 15px;
-    padding-top: 5px;
-    color: red;
-    font-size: 13px;
+  padding-left: 5px;
+  padding-top: 5px;
+  color: red;
+  font-size: 13px;
+
+  &::before {
+    display: inline;
+    content: "⚠ ";
+  }
 }
+
+
 
 .inputField {
-    margin-top: 25px;
+  margin-top: 25px;
 }
 .reqTxt {
-    color: lighten($borderColor, 60%);
-    font-size: 11px;
-    padding: 5px;
+  color: lighten($borderColor, 60%);
+  font-size: 11px;
+  padding: 5px;
 }
 form {
-  
-   
+  width: 100%;
+  text-align: left;
+  margin-bottom: 25px;
+
+  input {
+    padding: 15px;
     width: 100%;
-    text-align: left;
-    margin-bottom: 25px;
+    border: 1px solid $borderColor;
+    border-radius: 2px;
+    font-family: $secondFont;
+    font-weight: 100;
+  }
 
- 
- 
-    input {
-        padding: 15px;
-        width: 100%;
-        border: 1px solid $borderColor;
-        border-radius: 2px;
-        font-family: $secondFont;
-        font-weight: 100;
-    }
+  textarea {
+    border: 1px solid $borderColor;
+    padding: 15px;
+    width: 100%;
+    font-family: $secondFont;
+  }
 
-    textarea{
-        
-        border: 1px solid $borderColor;
-        padding: 15px;
-        width: 100%;
-        font-family: $secondFont;
-    }
-
-    .btn{
-        margin-top: 25px;
-       padding: 12px 50px;
-       width: 100%;
-    }
-    
+  .btn {
+    margin-top: 25px;
+    padding: 12px 50px;
+    width: 100%;
+  }
 }
