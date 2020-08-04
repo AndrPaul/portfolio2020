@@ -7,7 +7,7 @@ import CV from "./components/cv/CV";
 import Contact from "./components/contact/Contact";
 import Footer from "./components/footer/Footer";
 import axios from 'axios';
-import Helmet from 'react-helmet';
+
 
 import "./sass/App.scss";
 
