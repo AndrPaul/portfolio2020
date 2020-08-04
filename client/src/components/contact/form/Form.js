@@ -1,105 +1,93 @@
-import React, { useState } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
-import toastr from 'toastr';
+import toastr from "toastr";
 import axios from "axios";
 import ErrorMessage from "./validate";
 
 const Form = () => {
-  const [values, setValues] = useState({
-    email: "",
-    name: "",
-    subject: "",
-    description: "",
-  });
+  const { register, handleSubmit, errors } = useForm();
 
-  const { register, handleSubmit, reset, errors } = useForm();
-
-
-  toastr.options = {"positionClass": "toast-top-right","progressBar": true,}
-  const onSubmit = (values, e) => {
-    
-    const { email, name, subject, description } = values;
+  toastr.options = { positionClass: "toast-top-right", progressBar: true };
+  const onSubmit = (data, e) => {
+    const { email, firstname, lastname, subject, description } = data;
     axios.post("http://localhost:8080/sendme", {
       email,
-      name,
+      firstname,
+      lastname,
       subject,
       text: description,
     });
-   
+    toastr.success("Message was sent successfully!");
     e.target.reset();
-    toastr.success('Message was sent successfully!');
-   
   };
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setValues({
-      ...values,
-      [name]: value,
-    });
-    
-  };
-
-
   return (
-    <div>
-      <form onSubmit={handleSubmit(onSubmit)} noValidate>
-        <div className="inputField">
-          <input
-            className={`${errors.email && "inputError"}`}
-            name="email"
-            type="email"
-            ref={register({ required: true, pattern: /^\S+@\S+$/i })}
-            placeholder="Your email *"
-            value={values.email}
-            onChange={handleChange}
-          />
-          <ErrorMessage error={errors.email} />
-        </div>
-        <div className="inputField">
-          <input
-            className={`${errors.name && "inputError"}`}
-            name="name"
-            type="text"
-            placeholder="Your name *"
-            ref={register({ required: true })}
-            value={values.name}
-            onChange={handleChange}
-          />
-          <ErrorMessage error={errors.name} />
-        </div>
-        <div className="inputField">
-          <input
-            className={`${errors.subject && "inputError"}`}
-            name="subject"
-            type="text"
-            placeholder="Subject *"
-            ref={register({ required: true })}
-            value={values.subject}
-            onChange={handleChange}
-          />
-          <ErrorMessage error={errors.subject} />
-        </div>
-        <div className="inputField">
-          <p className="reqTxt"> * = Required</p>
-          <textarea
-            className={`${errors.description && "inputError"}`}
-            name="description"
-            placeholder="Type your message here *"
-            ref={register({ required: true, minLength: 15 })}
-            value={values.description}
-            onChange={handleChange}
-            rows="15"
-            cols="80"
-          ></textarea>
-          <ErrorMessage error={errors.description} />
-        </div>
+    <main className="container">
+      <div className="contactContainer">
+        <div className="formImage"></div>
+        <form onSubmit={handleSubmit(onSubmit)} noValidate>
+          <h2>Contact form</h2>
+          <div className="inputField">
+            <input
+              className={`${errors.email && "inputError"}`}
+              name="email"
+              type="email"
+              ref={register({ required: true, pattern: /^\S+@\S+$/i })}
+              placeholder="Your e-mail *"
+            />
+            <ErrorMessage error={errors.email} />
+          </div>
+          <div className="singleField">
+            <div className="inputField">
+              <input
+                className={`${errors.firstname && "inputError"}`}
+                name="firstname"
+                type="text"
+                placeholder="First name *"
+                ref={register({ required: true })}
+              />
 
-        <button className="btn" onClick={reset} type="submit">
-          Send message
-        </button>
-      </form>
-    </div>
+              <ErrorMessage error={errors.firstname} />
+            </div>
+            <div className="inputField">
+              <input
+                className={`${errors.lastname && "inputError"}`}
+                name="lastname"
+                type="text"
+                placeholder="Last name *"
+                ref={register({ required: true })}
+              />
+              <ErrorMessage error={errors.lastname} />
+            </div>
+          </div>
+
+          <div className="inputField">
+            <input
+              className={`${errors.subject && "inputError"}`}
+              name="subject"
+              type="text"
+              placeholder="Subject *"
+              ref={register({ required: true })}
+            />
+            <ErrorMessage error={errors.subject} />
+          </div>
+          <div className="inputField">
+            <textarea
+              className={`${errors.description && "inputError"}`}
+              name="description"
+              placeholder="Type your message here *"
+              ref={register({ required: true, minLength: 15 })}
+              rows="8"
+              cols="90"
+            ></textarea>
+            <ErrorMessage error={errors.description} />
+          </div>
+          <p className="reqTxt"> * = Required</p>
+          <button className="btn" type="submit">
+            Send message
+          </button>
+        </form>
+      </div>
+    </main>
   );
 };
 

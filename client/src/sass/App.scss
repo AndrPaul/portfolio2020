@@ -6,39 +6,47 @@
 @import "../components/cv/cv";
 @import "../components/contact/contact";
 @import "../components/footer/footer";
+@import "mediaQueries";
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-font-smoothing: subpixel-antialiased;
+
 }
 
+.container {
+  width: 100%;
+  @include flexColCenter;
+  background-position: top;
+  background-size: cover;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
 .app-wrap {
-  position: relative;
-  min-height: 100vh;
+  display: flex;
+
   width: calc(100% - 65px);
   background-color: $mainColor;
   float: right;
   color: $borderColor;
-  display: flex;
   justify-content: center;
-  padding-top: 10vh;
-  padding-left: 5%;
-  padding-right: 5%;
   font-weight: 400;
   font-family: $secondFont;
 }
 
 .btn {
   padding: 12px 17px;
+  text-align: center;
+  width: 245px;
   border: none;
   text-decoration: none;
   background-color: $borderColor;
-  font-family: $primeFont;
   font-size: 18px;
-  color: $mainColor;
+  color: white;
   text-transform: uppercase;
-  font-weight: lighter;
+  font-family: $secondFont;
   border-radius: 2px;
 
   &:hover {
@@ -49,22 +57,23 @@
 }
 
 .btn2 {
-  color: $borderColor;
-  padding: 8px 10px;
   text-decoration: none;
-  background-color: $borderColor;
-  font-family: "Akrobat";
+  font-family: $secondFont;
   text-transform: uppercase;
   color: $mainColor;
-  font-size: 15px;
+  font-size: 1.2em;
   border-radius: 2px;
-  
+  letter-spacing: 1px;
   display: flex;
-  justify-content: space-between;
-
+  align-items: center;
+  font-weight: bold;
+  margin-bottom: 15px;
+  backface-visibility: hidden;
+  
   &:hover {
-    color: $liOrange;
-    transition: ease-in 0.3s;
+   
+    transform: translate(0px, -5px);
+    transition: transform 0.3s;
     
   }
 }

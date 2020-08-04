@@ -2,7 +2,7 @@ import React , { useState , useEffect } from 'react'
 import Hero from '../hero/Hero';
 import axios from 'axios';
 import PortItem from './portItem/PortItem';
-
+import Helmet from 'react-helmet';
 
 const Portfolio = (props) => {
     const [state,setState] = useState({
@@ -24,11 +24,14 @@ const Portfolio = (props) => {
     },[]);
   
     return (
-        <div>
+        <main className="container">
+           <Helmet>
+        <title>Portfolio</title>
+      </Helmet>
             <Hero title={props.title} subTitle={props.subTitle} text={props.text} />
             <PortItem item={state.projects} />
             
-        </div>
+        </main>
     );
 
 }

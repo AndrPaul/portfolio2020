@@ -1,37 +1,42 @@
 .portItems {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 82%;
+  
+  .btnContainer{
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    max-width: 1000px;
-    min-height: 350px;
- 
+    justify-content: flex-start;
+    flex-direction: row;
 
-    .itemDesc {
-        
-        padding: 15px;
-        display: flex;
-        flex-direction: column;
-        
-        
-
-        a:first-of-type {
-            margin-top: 15px;
-            border-bottom: 1px solid $mainColor;
-            background-color: $hoverColor;
-        }
-        
+    & > .btn2:first-of-type{
+      margin-right: 20px;
     }
-    .pItem {
-        border: 1px solid $borderColor;     
-        margin: 15px;
-        border-radius: 2px;
-        max-width: 300px;
+  }
+  
+  }
+  .pItem {
+   padding: 30px;
+    margin: 10px;
+    border-radius: 2px;
+    width: 380px;
+    height: 510px;
+   
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+   
 
-        h3 {
-            border-bottom: 1px solid $borderColor;
-            padding-bottom: 15px;
-            font-family: 'Akrobat';
-            text-transform: uppercase;
-            margin-bottom: 15px;
-        }
+    h3 {
+      font-size: 2.2em;
+      line-height: 1;
+      font-family: $secondFont;
+      text-transform: uppercase;
+      max-width: 300px;
+      flex-grow: 1;
     }
-}
+  }
+

@@ -7,6 +7,7 @@ import CV from "./components/cv/CV";
 import Contact from "./components/contact/Contact";
 import Footer from "./components/footer/Footer";
 import axios from 'axios';
+import Helmet from 'react-helmet';
 
 import "./sass/App.scss";
 
@@ -16,7 +17,6 @@ const App = (props) => {
   useEffect(() => {
     axios.get('http://localhost:8080/api/metainfo')
       .then(res => {
-        console.log(res.data)
 
         setHeader(res.data)
         // return[...res.data]
@@ -25,20 +25,24 @@ const App = (props) => {
 
 
   return (
+
     <Router>
+
       <div className="App">
+        
         <NavBar />
 
-        <div className="app-wrap">
+        <main className="app-wrap">
           <Switch>
             <Route path="/" exact render={Home} />
             <Route path="/portfolio" render={() => (<Portfolio title={header.length > 0 ? header[0].portfolio.title : ''} subTitle={header.length > 0 ? header[0].portfolio.subTitle : ''} />)} />
             <Route path="/cv" render={() => (<CV title={header.length > 0 ? header[0].cv.title : ''} subTitle={header.length > 0 ? header[0].cv.subTitle : ''} />)} />
             <Route path="/contact" render={() => (<Contact title={header.length > 0 ? header[0].contact.title : ''} subTitle={header.length > 0 ? header[0].contact.subTitle : ''} />)} />
-            <Route path="/footer" component={Footer} />
+
           </Switch>
 
-        </div>
+        </main>
+        <Footer />
       </div>
     </Router>
   );

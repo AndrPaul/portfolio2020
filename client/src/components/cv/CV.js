@@ -1,12 +1,21 @@
-import React from 'react'
-import Hero from '../hero/Hero';
-function CV(props) {
+import React from 'react';
+import DownloadCV from "./DownloadCV/DownloadCV"
 
-    return(
-        <div>
+import Hero from '../hero/Hero';
+import Helmet from 'react-helmet';
+
+
+const CV = (props) => {
+
+    return (
+        <main className="container">
+        <Helmet>
+        <title>Download Paul's CV</title>
+        </Helmet>
             <Hero title={props.title} subTitle={props.subTitle} text={props.text} />
-            
-        </div>
+            <DownloadCV />
+
+        </main>
     );
 
 }

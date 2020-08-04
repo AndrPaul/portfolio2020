@@ -1,22 +1,27 @@
-
-
 header {
-   display: flex;
-  justify-content: center;
-  
-    line-height: 1;
-    margin-bottom: 5vh;
-    
-   
-    
-    h1 {
-        font-size: 80px;
-       
-    }
-    
-    h3 {
-        color: $liOrange;
-        font-size: 35px; 
-    }
-}
+  margin-bottom: 5vh;
+  width: 100%;
+  @include flexColCenter;
 
+  line-height: 1.2;
+
+  .topHero {
+    width: 100%;
+    @include flexColCenter;
+  }
+  h1 {
+    font-size: 6em;
+    color: $borderColor;
+    text-transform: uppercase;
+
+    letter-spacing: 5px;
+  }
+
+  h3 {
+    color: $liOrange;
+    font-size: 2em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-family: $bodyFont;
+  }
+}

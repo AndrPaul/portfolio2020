@@ -1,34 +1,28 @@
 // Colors
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
-
-@font-face {
-    font-family: 'Akrobat';
-    font-style: normal;
-    font-weight: 400;
-    src:url('../fonts/Akrobat/WEB/Akrobat-Black.eot');
-    src:local("Akrobat"),
-        url('../fonts/Akrobat/WEB/Akrobat-Black.woff') format('woff'),
-        url('../fonts/Akrobat/WEB/Akrobat-Black.woff2') format('woff2'),
-    
-    
-  }
-
-
-
-$mainColor:  #eeeeee;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
+$mainColor: #ffffff;
 $borderColor: #222831;
-$liOrange : #e79c2a;
-$hoverColor: #393e46;
-$primeFont : 'Akrobat';
-$secondFont : "Roboto Slab", serif;
+$liOrange: #13aa52;
+$hoverColor: lighten($borderColor, 5%);
+$bodyFont:  'Zilla Slab', serif;
+$secondFont: "Poppins", sans-serif;
 
-.orange {
-    color: $liOrange;
-    z-index: 2;
-    
+.green {
+  color: $liOrange;
 }
 
+@mixin flexColCenter {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 
+@mixin gradient {
+  background: $borderColor;
+  background: -webkit-linear-gradient(top left, $borderColor, $hoverColor);
+  background: -moz-linear-gradient(top left, $borderColor, $hoverColor);
+  background: linear-gradient(to bottom right, $borderColor, $hoverColor);
+}
 /* Color Theme Swatches in RGBA */

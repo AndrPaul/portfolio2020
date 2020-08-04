@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Icons from "./icons/Icons";
-
 import reactLogo from "./icons/logos/react.svg";
 import nodejsLogo from "./icons/logos/nodejs.svg";
 import htmlLogo from "./icons/logos/html.svg";
@@ -10,8 +9,11 @@ import jsLogo from "./icons/logos/javascript.svg";
 import sassLogo from "./icons/logos/sass.svg";
 import mongoDbLogo from "./icons/logos/mongoDb.svg";
 import bootstrapLogo from "./icons/logos/bootstrap.svg";
+import Helmet from 'react-helmet';
 
 const Home = () => {
+
+
   const images = [
     { src: jsLogo, alt: "javascript" },
     { src: htmlLogo, alt: "HTML5" },
@@ -22,20 +24,26 @@ const Home = () => {
     { src: nodejsLogo, alt: "Node.js" },
     { src: mongoDbLogo, alt: "MongoDB" },
   ];
-  return (
-    <div className="homepage">
-      <div className="topContainer">
-        <h1> <span className="orange">Hello,</span></h1>
-        <h1>my name is Paul<span className="orange">.</span></h1>
-      </div>
-      <h2>I'm a<span className="orange"> web developer</span>.</h2>
-      <div className="btnContainer">
-        <Link className="btn"  to="/portfolio">See my portfolio</Link>
-        <Link className="btn"  to="/CV">Download my CV</Link>
-      </div>
 
-      <Icons images={images} />
-    </div>
+  return (
+    <main className="container">
+      <Helmet>
+        <title>Paul's homepage</title>
+      </Helmet>
+
+      <div className="topContainer">
+        <h1><span className="green">Hello,</span></h1>
+        <h1>my name is Paul<span className="green">.</span></h1>
+        <h2>I'm a<span className="green"> web developer</span>,</h2>
+        <h2>based in <span className="green">Belgium</span>.</h2>
+        <div className="btnContainer">
+          <Link className="btn" to="/portfolio">See my <span className="green">portfolio</span></Link>
+          <Link className="btn" to="/CV">Download <span className="green">CV</span></Link>
+        </div>
+
+        <Icons images={images} />
+      </div>
+    </main>
   );
 };
 

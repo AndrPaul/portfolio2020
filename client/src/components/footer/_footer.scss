@@ -1,0 +1,14 @@
+.footer {
+    background-color: darken($mainColor, 3%);
+    min-height: 50px;
+    width: calc(100% - 65px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $borderColor;
+    font-weight: 500;
+    float: right;
+    margin-top: 10vh;
+    font-family: $secondFont;
+    font-size: 0.9em;
+}

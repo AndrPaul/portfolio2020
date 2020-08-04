@@ -4,12 +4,11 @@ const Hero =(props) => {
 
     return(
         <header>
-            <div className="headerWrap">
+            <div className="topHero">
             { props.title && <h1>{props.title}</h1> }
-            { props.subTitle && <h3> {props.subTitle}</h3> }
-          
-            </div>
             
+            </div>
+            { props.subTitle && <h3> {props.subTitle}</h3> }
         </header>
                         
               
