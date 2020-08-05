@@ -2,7 +2,7 @@ import React , { useState , useEffect } from 'react'
 import Hero from '../hero/Hero';
 import axios from 'axios';
 import PortItem from './portItem/PortItem';
-import Helmet from 'react-helmet';
+//import Helmet from 'react-helmet';
 
 const Portfolio = (props) => {
     const [state,setState] = useState({
@@ -11,7 +11,7 @@ const Portfolio = (props) => {
    
  
     useEffect(() => {
-      axios.get('http://localhost:8080/api/portItems')
+      axios.get('http://161.35.158.203:8080/api/portItems')
       .then(res=>res)
       .then(data=>{
        // console.log(data.data)
@@ -25,9 +25,6 @@ const Portfolio = (props) => {
   
     return (
         <main className="container">
-           <Helmet>
-        <title>Portfolio</title>
-      </Helmet>
             <Hero title={props.title} subTitle={props.subTitle} text={props.text} />
             <PortItem item={state.projects} />
             

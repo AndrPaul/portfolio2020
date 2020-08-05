@@ -2,7 +2,7 @@ const express = require('express');
 
 const router = express.Router();
 
-const PortfolioItem = require('../models/portfolioitem');
+const PortfolioItem = require('../models/portfolioItem');
 const Metainfo = require('../models/metainfo');
 
 router.get('/portItems', (req, res) => {
