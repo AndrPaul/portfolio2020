@@ -9,6 +9,8 @@ const PortfolioSchema = new Schema({
     gitlink: String,
     seelink: String
 }, { collection: 'projects' });
-const PortfolioItem = mongoose.model('portfolioitem', PortfolioSchema);
+
+mongoose.model('portfolioitem', PortfolioSchema ,"projects");
+const PortfolioItem = mongoose.model('portfolioitem');
 
 module.exports = PortfolioItem;
