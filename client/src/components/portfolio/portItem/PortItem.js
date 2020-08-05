@@ -3,13 +3,15 @@ import {AiOutlineGithub} from "react-icons/ai";
 import {FaEye} from "react-icons/fa";
 
 const obj = ({ item }) => {
+
+    
     return (
         <div className='portItems'>
 
        
             {
                 item.map((obj) => (
-                    <div  style={{backgroundImage:`url(http://localhost:3000/images/${obj.src}.png)`}}   className='pItem' key={obj._id}>
+                    <div  style={{backgroundImage:`url(${process.env.PUBLIC_URL}/images/${obj.src}.png)`}}   className='pItem' key={obj._id}>
                                          
                       
                         <h3>{obj.title}</h3>

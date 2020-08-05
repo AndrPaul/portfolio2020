@@ -15,7 +15,7 @@ const App = (props) => {
   const [header, setHeader] = useState({});
 
   useEffect(() => {
-    axios.get('http://localhost:8080/api/metainfo')
+    axios.get('/api/metainfo')
       .then(res => {
 
         setHeader(res.data)
