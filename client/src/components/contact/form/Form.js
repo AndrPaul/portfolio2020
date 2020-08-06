@@ -10,7 +10,7 @@ const Form = () => {
   toastr.options = { positionClass: "toast-top-right", progressBar: true };
   const onSubmit = (data, e) => {
     const { email, firstname, lastname, subject, description } = data;
-    axios.post("http://localhost:8080/sendme", {
+    axios.post("http://localhost:5000/sendme", {
       email,
       firstname,
       lastname,

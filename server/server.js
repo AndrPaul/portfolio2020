@@ -12,7 +12,9 @@ const path = require('path');
 app.use(express.static(path.join(__dirname, '/../client/build')));
 var allowedOrigins = [
   'http://161.35.158.203:3000',
-  'http://localhost:3000'
+  'http://localhost:3000',
+  'http://localhost:5000',
+  'http://161.35.158.203'
 ];
 
 

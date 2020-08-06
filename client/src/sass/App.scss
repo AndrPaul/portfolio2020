@@ -8,6 +8,7 @@
 @import "../components/footer/footer";
 @import "mediaQueries";
 
+
 * {
   margin: 0;
   padding: 0;
@@ -21,7 +22,7 @@
   @include flexColCenter;
   background-position: top;
   background-size: cover;
-  padding-top: 5vh;
+ 
   padding-bottom: 5vh;
 }
 .app-wrap {

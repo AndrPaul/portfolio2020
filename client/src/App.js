@@ -7,9 +7,11 @@ import CV from "./components/cv/CV";
 import Contact from "./components/contact/Contact";
 import Footer from "./components/footer/Footer";
 import axios from 'axios';
-
+import ScrollToTop from './ScrollToTop';
 
 import "./sass/App.scss";
+
+
 
 const App = (props) => {
   const [header, setHeader] = useState({});
@@ -23,13 +25,13 @@ const App = (props) => {
       })
   }, []);
 
-
+ 
   return (
 
     <Router>
-
+ 
       <div className="App">
-        
+      <ScrollToTop />
         <NavBar />
 
         <main className="app-wrap">

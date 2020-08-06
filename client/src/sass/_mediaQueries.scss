@@ -16,7 +16,6 @@
   .app-wrap {
     min-height: calc(100% - 65px) !important;
     float: none;
-    padding-top: 5vh;
     width: 100% !important;
   }
   .portItems {
@@ -68,6 +67,7 @@
   .container {
     .topContainer {
       padding: 0 2%;
+      padding-top: 10vh;
       display: flex;
       @include flexColCenter;
       text-align: center;
@@ -93,34 +93,29 @@
       display: flex;
       justify-content: center;
       ul {
+        width: 90%;
         display: flex;
-        width: 70%;
         flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
 
         li {
-          padding-right: 0px;
+          
         }
       }
     }
   }
 
   header {
-    margin-bottom: 5vh;
     width: 100%;
-    @include flexColCenter;
+
     line-height: 1.2;
     .topHero {
       width: 100%;
-      @include flexColCenter;
+      align-items: center;
+      padding-top: 5vh;
       text-align: center;
     }
     h1 {
       font-size: 3.3em;
-      color: $borderColor;
-      text-transform: uppercase;
-      letter-spacing: 5px;
     }
 
     h3 {

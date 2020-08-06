@@ -1,27 +1,40 @@
 header {
-  margin-bottom: 5vh;
+  margin-bottom: 10vh;
   width: 100%;
+  background-color: $hoverColor;
+  height: 36.76vh;
   @include flexColCenter;
-
+  justify-content: center;
+ 
   line-height: 1.2;
 
   .topHero {
     width: 100%;
     @include flexColCenter;
+   
   }
   h1 {
     font-size: 6em;
-    color: $borderColor;
+    color: $mainColor;
     text-transform: uppercase;
 
     letter-spacing: 5px;
+    
   }
 
   h3 {
     color: $liOrange;
-    font-size: 2em;
-    font-weight: bold;
+    font-size: 2.3em;
+    
+   font-weight: 400;
+    width: 90%;
+    padding: 5px 0px;
     letter-spacing: 2px;
-    font-family: $bodyFont;
-  }
+    font-family: $secondFont;
+   
+    text-align: center;
+   
+     
+  
+}
 }
