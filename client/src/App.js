@@ -37,7 +37,7 @@ const App = (props) => {
         <NavBar />
 
         <main className="app-wrap">
-          <AnimatePresence>
+          <AnimatePresence exitBeforeEnter>
           <Switch>
             <Route path="/" exact render={Home} />
             <Route path="/portfolio"  render={() => (<Portfolio title={header.length > 0 ? header[0].portfolio.title : ''} subTitle={header.length > 0 ? header[0].portfolio.subTitle : ''} />)} />
