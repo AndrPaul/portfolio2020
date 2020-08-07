@@ -1,15 +1,15 @@
 import React from 'react';
 import Hero from '../hero/Hero';
 import Form from './form/Form';
-//import Helmet from 'react-helmet';
-
+import {motion} from "framer-motion";
+import {pageTransitions, variant} from "../../pageTransitions"
 
 const Contact = (props) => {
     return (
-        <main className="container">
+        <motion.main transition={variant} initial="out" animate='in' exit="out"  variants={pageTransitions} className="container">
             <Hero title={props.title} subTitle={props.subTitle} text={props.text} />
             <Form />
-        </main>
+        </motion.main>
     );
 
 }

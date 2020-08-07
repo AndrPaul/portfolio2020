@@ -83,7 +83,7 @@ const Form = () => {
           </div>
           <p className="reqTxt"> * = Required</p>
           <button className="btn" type="submit">
-            Send message
+            Send <span className="green">message</span>
           </button>
         </form>
       </div>

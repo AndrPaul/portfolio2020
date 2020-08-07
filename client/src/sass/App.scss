@@ -14,8 +14,10 @@
   padding: 0;
   box-sizing: border-box;
   -webkit-font-smoothing: subpixel-antialiased;
+ 
 
 }
+
 
 .container {
   width: 100%;
@@ -49,6 +51,7 @@
   text-transform: uppercase;
   font-family: $secondFont;
   border-radius: 2px;
+  cursor: pointer;
 
   &:hover {
     color: $liOrange;

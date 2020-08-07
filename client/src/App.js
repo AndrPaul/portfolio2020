@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 import NavBar from "./components/navbar/NavBar";
 import Home from "./components/home/Home";
 import Portfolio from "./components/portfolio/Portfolio";
@@ -14,6 +15,7 @@ import "./sass/App.scss";
 
 
 const App = (props) => {
+ 
   const [header, setHeader] = useState({});
 
   useEffect(() => {
@@ -24,7 +26,7 @@ const App = (props) => {
         // return[...res.data]
       })
   }, []);
-
+  
  
   return (
 
@@ -35,14 +37,15 @@ const App = (props) => {
         <NavBar />
 
         <main className="app-wrap">
+          <AnimatePresence>
           <Switch>
             <Route path="/" exact render={Home} />
-            <Route path="/portfolio" render={() => (<Portfolio title={header.length > 0 ? header[0].portfolio.title : ''} subTitle={header.length > 0 ? header[0].portfolio.subTitle : ''} />)} />
+            <Route path="/portfolio"  render={() => (<Portfolio title={header.length > 0 ? header[0].portfolio.title : ''} subTitle={header.length > 0 ? header[0].portfolio.subTitle : ''} />)} />
             <Route path="/cv" render={() => (<CV title={header.length > 0 ? header[0].cv.title : ''} subTitle={header.length > 0 ? header[0].cv.subTitle : ''} />)} />
-            <Route path="/contact" render={() => (<Contact title={header.length > 0 ? header[0].contact.title : ''} subTitle={header.length > 0 ? header[0].contact.subTitle : ''} />)} />
+            <Route path="/contact"  render={() => (<Contact title={header.length > 0 ? header[0].contact.title : ''} subTitle={header.length > 0 ? header[0].contact.subTitle : ''} />)} />
 
           </Switch>
-
+          </AnimatePresence>
         </main>
         <Footer />
       </div>

@@ -8,6 +8,10 @@ const routeSendMe = require('./routes/sendMe');
 const cors = require("cors");
 const helmet = require("helmet");
 const path = require('path');
+const imagemin = require('imagemin');
+const imageminJpegtran = require('imagemin-jpegtran');
+const imageminPngquant = require('imagemin-pngquant');
+ 
 
 app.use(express.static(path.join(__dirname, '/../client/build')));
 
@@ -34,6 +38,21 @@ mongoose.connection.on("connected", () => {
   console.log("Mongoose is connected");
 });
 
+
+(async () => {
+  const files = await imagemin(['images/*.{jpg,png}'], {
+      destination: 'build/images',
+      plugins: [
+          imageminJpegtran(),
+          imageminPngquant({
+              quality: [0.6, 0.8]
+          })
+      ]
+  });
+
+  console.log(files);
+  //=> [{data: <Buffer 89 50 4e …>, destinationPath: 'build/images/foo.jpg'}, …]
+})();
 
 
 

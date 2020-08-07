@@ -9,23 +9,21 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 67.5%;
-    width: 100%;
+    height: 72%;
+    margin-left: 8px;
+    width: 70.6%;
     opacity: 0;
     transition: 0.3s ease;
-    background: rgba(255, 255, 255, 1.0);
-    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.815), rgba(19, 170, 82, 0.4));
-    background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.815), rgba(19, 170, 82, 0.4));
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.815), rgba(19, 170, 82, 0.4));
-    border-radius: 3px;
+    background-color: $liOrange;
+    border-radius: 7px;
+    transition: ease-in-out 0.3s;
   }
 
   .text {
     color: white;
-    text-shadow: 2px 1px 0px $borderColor;
     font-weight: bold;
     letter-spacing: 1px;
-    font-size: 20px;
+    font-size: 35px;
     width: 55%;
     position: absolute;
     top: 50%;
@@ -34,12 +32,19 @@
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: center;
+    
+    
   }
 
   .overlayWrap {
+  
     &:hover .overlay {
       opacity: 1;
+      transition: ease-in 0.3s;
+      
     }
+
+    
   }
 
   .cvWrap {
@@ -50,8 +55,13 @@
     @include flexColCenter;
     justify-content: space-between;
     min-height: 400px;
+    
     img {
-      width: 250px;
+      @include shadow;
+      width: 230px;
+      border-radius: 7px;
+     
+      
     }
   }
 }

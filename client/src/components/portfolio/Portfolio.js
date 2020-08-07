@@ -2,8 +2,8 @@ import React , { useState , useEffect } from 'react'
 import Hero from '../hero/Hero';
 import axios from 'axios';
 import PortItem from './portItem/PortItem';
-//import Helmet from 'react-helmet';
-
+import {motion} from "framer-motion";
+import {pageTransitions, variant} from "../../pageTransitions"
 const Portfolio = (props) => {
     const [state,setState] = useState({
       projects:[]
@@ -24,11 +24,11 @@ const Portfolio = (props) => {
     },[]);
   
     return (
-        <main className="container">
+        <motion.main initial="out" animate='in' exit="out" transition={variant}  variants={pageTransitions} className="container">
             <Hero title={props.title} subTitle={props.subTitle} text={props.text} />
             <PortItem item={state.projects} />
             
-        </main>
+        </motion.main>
     );
 
 }
