@@ -9,9 +9,6 @@ import jsLogo from "./icons/logos/javascript.svg";
 import sassLogo from "./icons/logos/sass.svg";
 import mongoDbLogo from "./icons/logos/mongoDb.svg";
 import bootstrapLogo from "./icons/logos/bootstrap.svg";
-import {pageTransitions, variant} from "../../pageTransitions"
-
-import {motion} from "framer-motion";
 
 const Home = () => {
 
@@ -28,7 +25,7 @@ const Home = () => {
   ];
 
   return (
-    <motion.main initial="out" animate='in' exit="out" transition={variant}  variants={pageTransitions} className="container">
+    <main  className="container">
 
       <div className="topContainer">
         <h1><span className="green">Hello,</span></h1>
@@ -42,7 +39,7 @@ const Home = () => {
 
         <Icons images={images} />
       </div>
-    </motion.main>
+    </main>
   );
 };
 
