@@ -21,7 +21,7 @@ const Form = () => {
     e.target.reset();
   };
   return (
-    <main className="container">
+    <main style={{marginBottom : '10vh'}}>
       <div className="contactContainer">
         <div className="formImage"></div>
         <form onSubmit={handleSubmit(onSubmit)} noValidate>

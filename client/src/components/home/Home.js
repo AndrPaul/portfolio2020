@@ -26,7 +26,7 @@ const Home = () => {
 
   return (
     <main  className="container">
-
+    
       <div className="topContainer">
         <h1><span className="green">Hello,</span></h1>
         <h1>my name is Paul<span className="green">.</span></h1>

@@ -4,6 +4,7 @@ import axios from 'axios';
 import PortItem from './portItem/PortItem';
 import {motion} from "framer-motion";
 import {pageTransitions, variant} from "../../pageTransitions"
+
 const Portfolio = (props) => {
     const [state,setState] = useState({
       projects:[]
@@ -24,7 +25,9 @@ const Portfolio = (props) => {
     },[]);
   
     return (
+      
         <motion.main initial="out" animate='in' exit="out" transition={variant}  variants={pageTransitions} className="container">
+        
             <Hero title={props.title} subTitle={props.subTitle} text={props.text} />
             <PortItem item={state.projects} />
             

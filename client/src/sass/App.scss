@@ -6,6 +6,7 @@
 @import "../components/cv/cv";
 @import "../components/contact/contact";
 @import "../components/footer/footer";
+@import "../components/404/_404";
 @import "mediaQueries";
 
 
@@ -24,8 +25,8 @@
   @include flexColCenter;
   background-position: top;
   background-size: cover;
- 
-  padding-bottom: 5vh;
+  min-height: 95vh;
+  
 }
 .app-wrap {
   display: flex;

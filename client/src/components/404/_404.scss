@@ -1,0 +1,24 @@
+
+
+.container-404 {
+    min-height: 80vh;
+    display: flex;
+    width: 80%;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+
+    h1{
+        font-size: 10em;
+        color: $liOrange;
+    }
+    h2{
+        font-size: 3em;
+    }
+
+    .btn {
+      margin-top: 10vh;
+    }
+}

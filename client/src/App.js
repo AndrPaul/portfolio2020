@@ -8,6 +8,7 @@ import CV from "./components/cv/CV";
 import Contact from "./components/contact/Contact";
 import Footer from "./components/footer/Footer";
 import axios from 'axios';
+import NotFound from "./components/404/NotFound"
 import ScrollToTop from './ScrollToTop';
 
 import "./sass/App.scss";
@@ -43,7 +44,7 @@ const App = (props) => {
             <Route path="/portfolio"  render={() => (<Portfolio title={header.length > 0 ? header[0].portfolio.title : ''} subTitle={header.length > 0 ? header[0].portfolio.subTitle : ''} />)} />
             <Route path="/cv" render={() => (<CV title={header.length > 0 ? header[0].cv.title : ''} subTitle={header.length > 0 ? header[0].cv.subTitle : ''} />)} />
             <Route path="/contact"  render={() => (<Contact title={header.length > 0 ? header[0].contact.title : ''} subTitle={header.length > 0 ? header[0].contact.subTitle : ''} />)} />
-
+            <Route path="" component={NotFound} />
           </Switch>
           </AnimatePresence>
         </main>
