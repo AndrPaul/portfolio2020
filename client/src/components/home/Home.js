@@ -33,7 +33,7 @@ const Home = () => {
         <h2>I'm a<span className="green"> web developer</span></h2>
         <h2>based in <span className="green">Belgium</span>.</h2>
         <div className="btnContainer">
-          <Link className="btn" to="/portfolio">See my<span className="green">portfolio</span></Link>
+          <Link className="btn" to="/portfolio">See my <span className="green">portfolio</span></Link>
           <Link className="btn" to="/CV">Download <span className="green">CV</span></Link>
         </div>
 
