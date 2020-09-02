@@ -9,6 +9,7 @@ import jsLogo from "./icons/logos/javascript.svg";
 import sassLogo from "./icons/logos/sass.svg";
 import mongoDbLogo from "./icons/logos/mongoDb.svg";
 import bootstrapLogo from "./icons/logos/bootstrap.svg";
+import CV from "./Paul Andrica - CV.pdf"
 
 const Home = () => {
 
@@ -34,7 +35,7 @@ const Home = () => {
         <h2>based in <span className="green">Belgium</span>.</h2>
         <div className="btnContainer">
           <Link className="btn" to="/portfolio">See my <span className="green">portfolio</span></Link>
-          <Link className="btn" to="/CV">Download <span className="green">CV</span></Link>
+          <a className="btn" target = "_blank" href={CV}>Open <span className="green">CV</span></a>
         </div>
 
         <Icons images={images} />
